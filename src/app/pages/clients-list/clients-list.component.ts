@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ToolbarModule } from 'primeng/toolbar';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-clients-list',
   standalone: true,
-  imports: [CommonModule, TableModule, ButtonModule],
+  imports: [CommonModule, ToolbarModule, TableModule, ButtonModule],
   templateUrl: './clients-list.component.html',
   styleUrl: './clients-list.component.scss'
 })
@@ -14,12 +16,16 @@ export class ClientsListComponent {
   public clients: any = [{}, [], [], {}, [], [], [], [], {}, [], [],
   [], [], {}, [], [], [], [], {}, [], [], [], [], {}, [], [], [], [], {},
   [], [], [], [], {}, [], [], [], [], {}, [], [], [], [], {}, [], []];
-
-
-  onEdit(o: any) { 
+  constructor(private r: Router) {
 
   }
-  onDelete(o: any) {
-    
+  onNew() {
+    this.r.navigate(['cliente']);
+  }
+  onEdit(obj: any) {
+    this.r.navigate(['cliente', 5]);
+  }
+  onDelete(obj: any) {
+
   }
 }

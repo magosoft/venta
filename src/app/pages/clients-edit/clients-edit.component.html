@@ -1,1 +1,50 @@
-<p>clients-edit works!</p>
+<div class="card">
+    <p-toolbar styleClass="mb-2">
+        <ng-template pTemplate="left">
+
+        </ng-template>
+        <ng-template pTemplate="right">
+            <button pButton pRipple label="Guardar" icon="pi pi-check" class="text-base p-button-success mr-2"
+                (click)="onSave()"></button>
+            <button pButton pRipple label="Cancelar" icon="pi pi-times" class="text-base p-button-danger"
+                (click)="onCancel()"></button>
+        </ng-template>
+    </p-toolbar>
+    <div class="formgrid grid">
+        <div class="field col-12 md:col-6">
+            <label for="firstname">Nombres</label>
+            <input id="firstname" type="text" pInputText required autofocus
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+        <div class="field col-12 md:col-6">
+            <label for="lastname">Apellidos</label>
+            <input id="lastname" type="text" pInputText required
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+        <div class="field col-12 md:col-6">
+            <label for="numdoc">Documento de identidad</label>
+            <input id="numdoc" type="text" pInputText required
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+        <div class="field col-12 md:col-6">
+            <label for="email">Correo electrónico</label>
+            <input id="email" type="text" pInputText
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+        <div class="field col-12 md:col-6">
+            <label for="phone_1">Teléfono 1</label>
+            <input id="phone_1" type="text" pInputText required autofocus
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+        <div class="field col-12 md:col-6">
+            <label for="phone_2">Teléfono 2</label>
+            <input id="phone_2" type="text" pInputText required autofocus
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+        <div class="field col-12 md:col-6">
+            <label for="phone_3">Teléfono 3</label>
+            <input id="phone_3" type="text" pInputText required autofocus
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+    </div>
+</div>
