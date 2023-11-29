@@ -1,47 +1,45 @@
-<div class="formgrid grid">
-    <div class="col-12">
-        <div class="card">
-            <p-toolbar styleClass="mb-2">
-                <ng-template pTemplate="left">
-                    <button pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-success mr-2"
-                        (click)="onNew()"></button>
-                </ng-template>
-                <ng-template pTemplate="right">
-                    <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help" (click)="dt.exportCSV()"></button>
-                </ng-template>
-            </p-toolbar>
+
+<div class="card">
+    <p-toolbar styleClass="mb-2">
+        <ng-template pTemplate="left">
+            <button pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-success mr-2"
+                (click)="onNew()"></button>
+        </ng-template>
+        <ng-template pTemplate="right">
+            <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"
+                (click)="dt.exportCSV()"></button>
+        </ng-template>
+    </p-toolbar>
 
 
-            <p-table #dt [value]="clients" [rows]="10" [paginator]="true"
-                currentPageReportTemplate="{first} a {last} de {totalRecords} registros" [showCurrentPageReport]="true">
-                <ng-template pTemplate="header">
-                    <tr>
-                        <th>Documento identidad</th>
-                        <th>Nombres</th>
-                        <th>Apellidos</th>
-                        <th>Correo electrónico</th>
-                        <th>Teléfonos</th>
-                        <th></th>
-                    </tr>
-                </ng-template>
-                <ng-template pTemplate="body" let-client>
-                    <tr>
-                        <td>{{ client.numdoc }}</td>
-                        <td>{{ client.nombre }}</td>
-                        <td>{{ client.apepat }}&nbsp;{{ client.apemat }}</td>
-                        <td>{{ client.corele }}</td>
-                        <td>{{ client.telpri }}&nbsp;{{ client.telseg }}&nbsp;{{ client.telter }}</td>
-                        <td>
-                            <div class="flex">
-                                <button pButton pRipple icon="pi pi-pencil"
-                                    class="p-button-rounded p-button-success mr-2" (click)="onEdit(client)"></button>
-                                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
-                                    (click)="onDelete(client)"></button>
-                            </div>
-                        </td>
-                    </tr>
-                </ng-template>
-            </p-table>
-        </div>
-    </div>
+    <p-table #dt [value]="clients" [rows]="10" [paginator]="true"
+        currentPageReportTemplate="{first} a {last} de {totalRecords} registros" [showCurrentPageReport]="true">
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="numdoc">Documento identidad <p-sortIcon field="numdoc"></p-sortIcon></th>
+                <th pSortableColumn="nombre">Nombres  <p-sortIcon field="nombre"></p-sortIcon></th>
+                <th pSortableColumn="ape">Apellidos  <p-sortIcon field="ape"></p-sortIcon></th>
+                <th pSortableColumn="corele">Correo electrónico  <p-sortIcon field="corele"></p-sortIcon></th>
+                <th>Teléfonos</th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-client>
+            <tr>
+                <td>{{ client.numdoc }}</td>
+                <td>{{ client.nombre }}</td>
+                <td>{{ client.apepat }}&nbsp;{{ client.apemat }}</td>
+                <td>{{ client.corele }}</td>
+                <td>{{ client.telpri }}&nbsp;{{ client.telseg }}&nbsp;{{ client.telter }}</td>
+                <td>
+                    <div class="flex">
+                        <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
+                            (click)="onEdit(client)"></button>
+                        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+                            (click)="onDelete(client)"></button>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
 </div>

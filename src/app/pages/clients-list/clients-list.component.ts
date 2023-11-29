@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-clients-list',
   standalone: true,
-  imports: [CommonModule, ToolbarModule, TableModule, ButtonModule],
   templateUrl: './clients-list.component.html',
-  styleUrl: './clients-list.component.scss'
+  styleUrl: './clients-list.component.scss',
+  imports: [CommonModule, ToolbarModule, TableModule, ButtonModule]
 })
 export class ClientsListComponent {
   public clients: any = [{}, [], [], {}, [], [], [], [], {}, [], [],

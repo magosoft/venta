@@ -1,0 +1,30 @@
+.layout-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 4rem;
+    transition: width var(--transition-duration);
+    display: flex;
+    color: var(--topbar-item-text-color);
+    background-color: var(--topbar-bg);
+    border-bottom: 1px solid var(--surface-border);
+}
+
+.layout-topbar .layout-topbar-start {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 1rem;
+    position: relative;
+    width: 17rem;
+}
+
+.layout-topbar .layout-topbar-end {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: end;
+    padding: 0 2rem;
+}

@@ -1,0 +1,23 @@
+.layout-sidebar {
+    position: fixed;
+    height: calc(100% - 4rem);
+    top: 4rem;
+    left: 0;
+    width: 17rem;
+    background: var(--menu-bg);
+    border-right: 1px solid var(--surface-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.layout-sidebar .layout-menu-container {
+    flex: 1;
+    padding-bottom: 2rem;
+    overflow: auto;
+}
+
+@media screen and (min-width: 992px) {
+    .layout-container.layout-static .layout-sidebar {
+        transition: transform .3s cubic-bezier(0, 0, .2, 1);
+    }
+}
